@@ -66,6 +66,10 @@ function ShowVoice (数字: number) {
         led.plot(1, 2)
         led.plot(1, 3)
         led.plot(1, 4)
+    } else {
+        startbit.startbit_setPixelRGBArgs(StartbitLights.Light1, randint(1, 10))
+        startbit.startbit_showLight()
+        basic.pause(100)
     }
 }
 startbit.startbit_Init()
