@@ -2,10 +2,9 @@ function ShowVoice (数字: number) {
     basic.clearScreen()
     if (数字 <= 50) {
         led.plot(2, 2)
-    } else if (数字 < 55) {
+    } else if (数字 <= 55) {
         led.plot(2, 2)
         led.plot(2, 3)
-        led.plot(1, 1)
     } else if (数字 <= 60) {
         led.plot(2, 2)
         led.plot(2, 3)
@@ -66,6 +65,9 @@ function ShowVoice (数字: number) {
         led.plot(1, 2)
         led.plot(1, 3)
         led.plot(1, 4)
+    } else if (数字 <= 45) {
+        startbit.startbit_clearLight()
+        basic.pause(100)
     } else {
         startbit.startbit_setPixelRGBArgs(StartbitLights.Light1, randint(1, 10))
         startbit.startbit_showLight()
@@ -73,6 +75,8 @@ function ShowVoice (数字: number) {
     }
 }
 startbit.startbit_Init()
+let i1 = 40
 basic.forever(function () {
     ShowVoice(startbit.startbit_getSoundVolume())
+    basic.pause(100)
 })
